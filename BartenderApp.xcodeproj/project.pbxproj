@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		20087F642BF0FDA1005A8E2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F632BF0FDA1005A8E2C /* AppDelegate.swift */; };
 		20087F662BF0FDA1005A8E2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */; };
-		20087F682BF0FDA1005A8E2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F672BF0FDA1005A8E2C /* ViewController.swift */; };
-		20087F6B2BF0FDA1005A8E2C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 20087F6A2BF0FDA1005A8E2C /* Base */; };
+		20087F682BF0FDA1005A8E2C /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F672BF0FDA1005A8E2C /* MainScreenViewController.swift */; };
 		20087F6E2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20087F6C2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld */; };
 		20087F702BF0FDA2005A8E2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */; };
 		20087F732BF0FDA2005A8E2C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 20087F722BF0FDA2005A8E2C /* Base */; };
 		20087F7E2BF0FDA3005A8E2C /* BartenderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F7D2BF0FDA3005A8E2C /* BartenderAppTests.swift */; };
 		20087F882BF0FDA3005A8E2C /* BartenderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F872BF0FDA3005A8E2C /* BartenderAppUITests.swift */; };
 		20087F8A2BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */; };
+		20087F9C2BF102D6005A8E2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F9B2BF102D6005A8E2C /* Colors.swift */; };
+		20087F9F2BF114E7005A8E2C /* CocktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F9E2BF114E7005A8E2C /* CocktailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,7 @@
 		20087F602BF0FDA1005A8E2C /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20087F632BF0FDA1005A8E2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20087F672BF0FDA1005A8E2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		20087F6A2BF0FDA1005A8E2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20087F672BF0FDA1005A8E2C /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		20087F6D2BF0FDA1005A8E2C /* BartenderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BartenderApp.xcdatamodel; sourceTree = "<group>"; };
 		20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20087F722BF0FDA2005A8E2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		20087F832BF0FDA3005A8E2C /* BartenderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartenderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20087F872BF0FDA3005A8E2C /* BartenderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppUITests.swift; sourceTree = "<group>"; };
 		20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		20087F9B2BF102D6005A8E2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		20087F9E2BF114E7005A8E2C /* CocktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,11 @@
 		20087F622BF0FDA1005A8E2C /* BartenderApp */ = {
 			isa = PBXGroup;
 			children = (
-				20087F632BF0FDA1005A8E2C /* AppDelegate.swift */,
-				20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */,
-				20087F672BF0FDA1005A8E2C /* ViewController.swift */,
-				20087F692BF0FDA1005A8E2C /* Main.storyboard */,
+				20087F9A2BF102C1005A8E2C /* Const */,
+				20087F992BF0FDFC005A8E2C /* NotImportant */,
+				20087F982BF0FDED005A8E2C /* ViewModel */,
+				20087F972BF0FDE8005A8E2C /* View */,
+				20087F962BF0FDE3005A8E2C /* Model */,
 				20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */,
 				20087F712BF0FDA2005A8E2C /* LaunchScreen.storyboard */,
 				20087F742BF0FDA2005A8E2C /* Info.plist */,
@@ -128,6 +131,54 @@
 				20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */,
 			);
 			path = BartenderAppUITests;
+			sourceTree = "<group>";
+		};
+		20087F962BF0FDE3005A8E2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20087F972BF0FDE8005A8E2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20087F9D2BF114C8005A8E2C /* Cell */,
+				20087F672BF0FDA1005A8E2C /* MainScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20087F982BF0FDED005A8E2C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		20087F992BF0FDFC005A8E2C /* NotImportant */ = {
+			isa = PBXGroup;
+			children = (
+				20087F632BF0FDA1005A8E2C /* AppDelegate.swift */,
+				20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */,
+			);
+			name = NotImportant;
+			sourceTree = "<group>";
+		};
+		20087F9A2BF102C1005A8E2C /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				20087F9B2BF102D6005A8E2C /* Colors.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		20087F9D2BF114C8005A8E2C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20087F9E2BF114E7005A8E2C /* CocktailCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +287,6 @@
 			files = (
 				20087F702BF0FDA2005A8E2C /* Assets.xcassets in Resources */,
 				20087F732BF0FDA2005A8E2C /* Base in Resources */,
-				20087F6B2BF0FDA1005A8E2C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20087F682BF0FDA1005A8E2C /* ViewController.swift in Sources */,
+				20087F682BF0FDA1005A8E2C /* MainScreenViewController.swift in Sources */,
+				20087F9C2BF102D6005A8E2C /* Colors.swift in Sources */,
 				20087F6E2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld in Sources */,
 				20087F642BF0FDA1005A8E2C /* AppDelegate.swift in Sources */,
+				20087F9F2BF114E7005A8E2C /* CocktailCollectionViewCell.swift in Sources */,
 				20087F662BF0FDA1005A8E2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		20087F692BF0FDA1005A8E2C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				20087F6A2BF0FDA1005A8E2C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		20087F712BF0FDA2005A8E2C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -451,7 +495,6 @@
 				INFOPLIST_FILE = BartenderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -479,7 +522,6 @@
 				INFOPLIST_FILE = BartenderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
