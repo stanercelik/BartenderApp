@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20087F642BF0FDA1005A8E2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F632BF0FDA1005A8E2C /* AppDelegate.swift */; };
+		20087F662BF0FDA1005A8E2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */; };
+		20087F682BF0FDA1005A8E2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F672BF0FDA1005A8E2C /* ViewController.swift */; };
+		20087F6B2BF0FDA1005A8E2C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 20087F6A2BF0FDA1005A8E2C /* Base */; };
+		20087F6E2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20087F6C2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld */; };
+		20087F702BF0FDA2005A8E2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */; };
+		20087F732BF0FDA2005A8E2C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 20087F722BF0FDA2005A8E2C /* Base */; };
+		20087F7E2BF0FDA3005A8E2C /* BartenderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F7D2BF0FDA3005A8E2C /* BartenderAppTests.swift */; };
+		20087F882BF0FDA3005A8E2C /* BartenderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F872BF0FDA3005A8E2C /* BartenderAppUITests.swift */; };
+		20087F8A2BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20087F7A2BF0FDA3005A8E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20087F582BF0FDA1005A8E2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20087F5F2BF0FDA1005A8E2C;
+			remoteInfo = BartenderApp;
+		};
+		20087F842BF0FDA3005A8E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20087F582BF0FDA1005A8E2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20087F5F2BF0FDA1005A8E2C;
+			remoteInfo = BartenderApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20087F602BF0FDA1005A8E2C /* BartenderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BartenderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20087F632BF0FDA1005A8E2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		20087F672BF0FDA1005A8E2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20087F6A2BF0FDA1005A8E2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20087F6D2BF0FDA1005A8E2C /* BartenderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BartenderApp.xcdatamodel; sourceTree = "<group>"; };
+		20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20087F722BF0FDA2005A8E2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20087F742BF0FDA2005A8E2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20087F792BF0FDA3005A8E2C /* BartenderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartenderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20087F7D2BF0FDA3005A8E2C /* BartenderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppTests.swift; sourceTree = "<group>"; };
+		20087F832BF0FDA3005A8E2C /* BartenderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BartenderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20087F872BF0FDA3005A8E2C /* BartenderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppUITests.swift; sourceTree = "<group>"; };
+		20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartenderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20087F5D2BF0FDA1005A8E2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F762BF0FDA3005A8E2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F802BF0FDA3005A8E2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20087F572BF0FDA1005A8E2C = {
+			isa = PBXGroup;
+			children = (
+				20087F622BF0FDA1005A8E2C /* BartenderApp */,
+				20087F7C2BF0FDA3005A8E2C /* BartenderAppTests */,
+				20087F862BF0FDA3005A8E2C /* BartenderAppUITests */,
+				20087F612BF0FDA1005A8E2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20087F612BF0FDA1005A8E2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20087F602BF0FDA1005A8E2C /* BartenderApp.app */,
+				20087F792BF0FDA3005A8E2C /* BartenderAppTests.xctest */,
+				20087F832BF0FDA3005A8E2C /* BartenderAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20087F622BF0FDA1005A8E2C /* BartenderApp */ = {
+			isa = PBXGroup;
+			children = (
+				20087F632BF0FDA1005A8E2C /* AppDelegate.swift */,
+				20087F652BF0FDA1005A8E2C /* SceneDelegate.swift */,
+				20087F672BF0FDA1005A8E2C /* ViewController.swift */,
+				20087F692BF0FDA1005A8E2C /* Main.storyboard */,
+				20087F6F2BF0FDA2005A8E2C /* Assets.xcassets */,
+				20087F712BF0FDA2005A8E2C /* LaunchScreen.storyboard */,
+				20087F742BF0FDA2005A8E2C /* Info.plist */,
+				20087F6C2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld */,
+			);
+			path = BartenderApp;
+			sourceTree = "<group>";
+		};
+		20087F7C2BF0FDA3005A8E2C /* BartenderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				20087F7D2BF0FDA3005A8E2C /* BartenderAppTests.swift */,
+			);
+			path = BartenderAppTests;
+			sourceTree = "<group>";
+		};
+		20087F862BF0FDA3005A8E2C /* BartenderAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20087F872BF0FDA3005A8E2C /* BartenderAppUITests.swift */,
+				20087F892BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift */,
+			);
+			path = BartenderAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20087F5F2BF0FDA1005A8E2C /* BartenderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20087F8D2BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderApp" */;
+			buildPhases = (
+				20087F5C2BF0FDA1005A8E2C /* Sources */,
+				20087F5D2BF0FDA1005A8E2C /* Frameworks */,
+				20087F5E2BF0FDA1005A8E2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BartenderApp;
+			productName = BartenderApp;
+			productReference = 20087F602BF0FDA1005A8E2C /* BartenderApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20087F782BF0FDA3005A8E2C /* BartenderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20087F902BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderAppTests" */;
+			buildPhases = (
+				20087F752BF0FDA3005A8E2C /* Sources */,
+				20087F762BF0FDA3005A8E2C /* Frameworks */,
+				20087F772BF0FDA3005A8E2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20087F7B2BF0FDA3005A8E2C /* PBXTargetDependency */,
+			);
+			name = BartenderAppTests;
+			productName = BartenderAppTests;
+			productReference = 20087F792BF0FDA3005A8E2C /* BartenderAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20087F822BF0FDA3005A8E2C /* BartenderAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20087F932BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderAppUITests" */;
+			buildPhases = (
+				20087F7F2BF0FDA3005A8E2C /* Sources */,
+				20087F802BF0FDA3005A8E2C /* Frameworks */,
+				20087F812BF0FDA3005A8E2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20087F852BF0FDA3005A8E2C /* PBXTargetDependency */,
+			);
+			name = BartenderAppUITests;
+			productName = BartenderAppUITests;
+			productReference = 20087F832BF0FDA3005A8E2C /* BartenderAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20087F582BF0FDA1005A8E2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					20087F5F2BF0FDA1005A8E2C = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					20087F782BF0FDA3005A8E2C = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 20087F5F2BF0FDA1005A8E2C;
+					};
+					20087F822BF0FDA3005A8E2C = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 20087F5F2BF0FDA1005A8E2C;
+					};
+				};
+			};
+			buildConfigurationList = 20087F5B2BF0FDA1005A8E2C /* Build configuration list for PBXProject "BartenderApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20087F572BF0FDA1005A8E2C;
+			productRefGroup = 20087F612BF0FDA1005A8E2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20087F5F2BF0FDA1005A8E2C /* BartenderApp */,
+				20087F782BF0FDA3005A8E2C /* BartenderAppTests */,
+				20087F822BF0FDA3005A8E2C /* BartenderAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20087F5E2BF0FDA1005A8E2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20087F702BF0FDA2005A8E2C /* Assets.xcassets in Resources */,
+				20087F732BF0FDA2005A8E2C /* Base in Resources */,
+				20087F6B2BF0FDA1005A8E2C /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F772BF0FDA3005A8E2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F812BF0FDA3005A8E2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20087F5C2BF0FDA1005A8E2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20087F682BF0FDA1005A8E2C /* ViewController.swift in Sources */,
+				20087F6E2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld in Sources */,
+				20087F642BF0FDA1005A8E2C /* AppDelegate.swift in Sources */,
+				20087F662BF0FDA1005A8E2C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F752BF0FDA3005A8E2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20087F7E2BF0FDA3005A8E2C /* BartenderAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20087F7F2BF0FDA3005A8E2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20087F8A2BF0FDA3005A8E2C /* BartenderAppUITestsLaunchTests.swift in Sources */,
+				20087F882BF0FDA3005A8E2C /* BartenderAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20087F7B2BF0FDA3005A8E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20087F5F2BF0FDA1005A8E2C /* BartenderApp */;
+			targetProxy = 20087F7A2BF0FDA3005A8E2C /* PBXContainerItemProxy */;
+		};
+		20087F852BF0FDA3005A8E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20087F5F2BF0FDA1005A8E2C /* BartenderApp */;
+			targetProxy = 20087F842BF0FDA3005A8E2C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20087F692BF0FDA1005A8E2C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20087F6A2BF0FDA1005A8E2C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20087F712BF0FDA2005A8E2C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20087F722BF0FDA2005A8E2C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20087F8B2BF0FDA3005A8E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20087F8C2BF0FDA3005A8E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20087F8E2BF0FDA3005A8E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BartenderApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20087F8F2BF0FDA3005A8E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BartenderApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20087F912BF0FDA3005A8E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BartenderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BartenderApp";
+			};
+			name = Debug;
+		};
+		20087F922BF0FDA3005A8E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BartenderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BartenderApp";
+			};
+			name = Release;
+		};
+		20087F942BF0FDA3005A8E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BartenderApp;
+			};
+			name = Debug;
+		};
+		20087F952BF0FDA3005A8E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CL3A52KNG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanercelik.BartenderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BartenderApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20087F5B2BF0FDA1005A8E2C /* Build configuration list for PBXProject "BartenderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20087F8B2BF0FDA3005A8E2C /* Debug */,
+				20087F8C2BF0FDA3005A8E2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20087F8D2BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20087F8E2BF0FDA3005A8E2C /* Debug */,
+				20087F8F2BF0FDA3005A8E2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20087F902BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20087F912BF0FDA3005A8E2C /* Debug */,
+				20087F922BF0FDA3005A8E2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20087F932BF0FDA3005A8E2C /* Build configuration list for PBXNativeTarget "BartenderAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20087F942BF0FDA3005A8E2C /* Debug */,
+				20087F952BF0FDA3005A8E2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20087F6C2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20087F6D2BF0FDA1005A8E2C /* BartenderApp.xcdatamodel */,
+			);
+			currentVersion = 20087F6D2BF0FDA1005A8E2C /* BartenderApp.xcdatamodel */;
+			path = BartenderApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 20087F582BF0FDA1005A8E2C /* Project object */;
+}
