@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct CocktailModel: Codable {
+    let id: String
+    let title: String
+    let difficulty: String
+    let image: URL
+}

@@ -8,7 +8,14 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
-
+    
+    let networking = Networking()
+    let viewModel = MainScreenViewModel()
+    
+    var cocktailList : [CocktailModel] = []
+    var filteredCocktailList : [CocktailModel] = []
+    var isFiltering: Bool = false
+    
     let titleLabel = UILabel()
     let addFavoritesButtonImage = UIImageView()
     let searchBar = UISearchBar()
@@ -26,7 +33,8 @@ class MainScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .appBackground
+        
+        view.backgroundColor = .appBackground
 
         configureLabel()
         configureSearchBar()
@@ -36,7 +44,24 @@ class MainScreenViewController: UIViewController {
 
         coctailsCollectionView.delegate = self
         coctailsCollectionView.dataSource = self
+        
+        self.filteredCocktailList = cocktailList
+        
+        searchBar.delegate = self
+        
+        fetchCocktails()
     }
+    
+    func fetchCocktails() {
+        networking.fetchCocktails { [weak self] models in
+            self?.cocktailList = models
+            
+            DispatchQueue.main.async {
+                self?.coctailsCollectionView.reloadData()
+            }
+        }
+    }
+    
     
     // MARK: - Configures
 
@@ -51,7 +76,7 @@ class MainScreenViewController: UIViewController {
 
     func configureFavoritesButton() {
         addFavoritesButtonImage.translatesAutoresizingMaskIntoConstraints = false
-        addFavoritesButtonImage.image = UIImage(systemName: "bookmark.fill")
+        addFavoritesButtonImage.image = UIImage(systemName: "bookmark")
         addFavoritesButtonImage.tintColor = .black
 
         view.addSubview(addFavoritesButtonImage)
@@ -73,10 +98,10 @@ class MainScreenViewController: UIViewController {
         layout.minimumLineSpacing = 2
         layout.minimumInteritemSpacing = 2
         coctailsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        coctailsCollectionView.backgroundColor = .systemBlue
         self.view.addSubview(coctailsCollectionView)
     }
-
+                      
+    
     // MARK: - Constraints
 
     private func setupConstraints() {
@@ -118,14 +143,42 @@ class MainScreenViewController: UIViewController {
 
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        if isFiltering {
+            return filteredCocktailList.count
+        }
+            return cocktailList.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CocktailCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CocktailCollectionViewCell", for: indexPath) as! CocktailCollectionViewCell
+        
+        if isFiltering {
+            let cocktailModel = filteredCocktailList[indexPath.item]
+            cell.setup(model: cocktailModel)
+        } else {
+            let cocktailModel = cocktailList[indexPath.item]
+            cell.setup(model: cocktailModel)
+        }
         return cell
     }
+}
+
+
+extension MainScreenViewController : UISearchBarDelegate {
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        isFiltering = true
+        
+        if searchText.isEmpty {
+            filteredCocktailList = cocktailList
+        } else {
+            filteredCocktailList = cocktailList.filter { cocktail in
+                cocktail.title.lowercased().contains(searchText.lowercased())
+            }
+        }
+        coctailsCollectionView.reloadData()
+    }
 }
 
