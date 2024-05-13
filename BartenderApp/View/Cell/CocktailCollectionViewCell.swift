@@ -121,7 +121,7 @@ class CocktailCollectionViewCell: UICollectionViewCell {
     // MARK: - Setup Func
     func setup(model: CocktailModel) {
         
-        viewModel.downloadImage(model: model, cocktailImage: self.cocktailImage)
+        viewModel.downloadImage(url: model.image, cocktailImage: self.cocktailImage)
         titleLabel.text = model.title
     }
     

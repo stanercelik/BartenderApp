@@ -20,10 +20,10 @@ class MainScreenViewController: UIViewController {
     let addFavoritesButtonImage = UIImageView()
     let searchBar = UISearchBar()
     let coctailsCollectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout() // Create a layout
-            layout.scrollDirection = .vertical // Set scroll direction
-            layout.minimumLineSpacing = 8 // Set minimum spacing between rows
-            layout.minimumInteritemSpacing = 8 // Set minimum spacing between items in a row
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            layout.minimumLineSpacing = 8
+            layout.minimumInteritemSpacing = 8
             let itemWidth = (UIScreen.main.bounds.width - 48) / 3
             layout.itemSize = CGSize(width: itemWidth, height: 150)
             let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout) // Initialize with the layout
@@ -56,11 +56,13 @@ class MainScreenViewController: UIViewController {
         networking.fetchCocktails { [weak self] models in
             self?.cocktailList = models
             
+            // Result success failure
             DispatchQueue.main.async {
                 self?.coctailsCollectionView.reloadData()
             }
         }
     }
+
     
     
     // MARK: - Configures
@@ -92,11 +94,6 @@ class MainScreenViewController: UIViewController {
     }
 
     func configureCollectionView() {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 2
-        layout.minimumInteritemSpacing = 2
         coctailsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(coctailsCollectionView)
     }
@@ -161,6 +158,13 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.setup(model: cocktailModel)
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cocktail = cocktailList[indexPath.row]
+        let detailVC = CocktailDetailViewController()
+        detailVC.cocktailID = cocktail.id
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
