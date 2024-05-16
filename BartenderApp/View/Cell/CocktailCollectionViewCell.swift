@@ -12,7 +12,7 @@ class CocktailCollectionViewCell: UICollectionViewCell {
     let viewModel = MainScreenViewModel()
     
     let cocktailView = UIView()
-    let cocktailImage = UIImageView()
+    var cocktailImage = UIImageView()
     let gradientView = UIView()
     let titleLabel = UILabel()
     
@@ -121,7 +121,7 @@ class CocktailCollectionViewCell: UICollectionViewCell {
     // MARK: - Setup Func
     func setup(model: CocktailModel) {
         
-        viewModel.downloadImage(url: model.image, cocktailImage: self.cocktailImage)
+        cocktailImage = viewModel.downloadImage(url: model.image, cocktailImage: self.cocktailImage)
         titleLabel.text = model.title
     }
     
