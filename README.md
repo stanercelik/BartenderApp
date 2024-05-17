@@ -1,6 +1,4 @@
-![image](https://github.com/stanercelik/BartenderApp/assets/89196900/ad31b3d9-ee1f-4719-a595-517a3e8f86c7)
 # Bartender App
-
 
 ## Description
 Bartender App allows you to search for cocktails, view their ingredients, descriptions, and recipes, and add your favorite cocktails to a favorites list.
@@ -12,13 +10,25 @@ Bartender App allows you to search for cocktails, view their ingredients, descri
 ## Packages
 * SDWebImages
 
-
 ## Screenshots
-![Main Screen](https://ibb.co/tQXDZQm)
-![Searching](https://ibb.co/p0r7gSF)
-![Favorites Screen](https://ibb.co/C7DCL7C)
-![Cocktail Detail Screen](https://ibb.co/XsYFnGx)
-
+<table>
+  <tr>
+    <td>
+      <img src="https://i.ibb.co/6rBFvrn/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-12-54.png" width="300" />
+    </td>
+    <td>
+      <img src="https://i.ibb.co/1vJg3kW/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-13-01.png" width="300" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://i.ibb.co/fpL6Jp6/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-13-08.png" width="300" />
+    </td>
+    <td>
+      <img src="https://i.ibb.co/gT4t0cZ/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-13-18.png" width="300" />
+    </td>
+  </tr>
+</table>
   
 ## Features
 - MVVM Architecture
