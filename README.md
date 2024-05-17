@@ -17,7 +17,7 @@ Bartender App allows you to search for cocktails, view their ingredients, descri
       <img src="https://i.ibb.co/6rBFvrn/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-12-54.png" width="300" />
     </td>
     <td>
-      <img src="https://i.ibb.co/1vJg3kW/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-13-01.png" width="300" />
+      <img src="https://i.ibb.co/G3zsccM/Simulator-Screenshot-i-Phone-15-Pro-2024-05-17-at-19-38-23.png" width="300" />
     </td>
   </tr>
   <tr>
