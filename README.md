@@ -40,4 +40,3 @@ Bartender App allows you to search for cocktails, view their ingredients, descri
 - View cocktail list
 - View cocktail detail
 - Search cocktail
-- View suggested products
