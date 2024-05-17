@@ -24,6 +24,8 @@
 		20087FAD2BF24604005A8E2C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 20087FAC2BF24604005A8E2C /* SDWebImage */; };
 		20087FAF2BF247ED005A8E2C /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087FAE2BF247ED005A8E2C /* BaseNetwork.swift */; };
 		20087FB12BF24831005A8E2C /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20087FB02BF24831005A8E2C /* AppConst.swift */; };
+		20B049C72BF7AA1B00D3C218 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B049C62BF7AA1B00D3C218 /* CoreDataManager.swift */; };
+		20B049C92BF7AA8B00D3C218 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B049C82BF7AA8B00D3C218 /* FavouritesViewController.swift */; };
 		20FFEA332BF2593100784493 /* CocktailDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFEA322BF2593100784493 /* CocktailDetailModel.swift */; };
 		20FFEA352BF25BF800784493 /* CocktailDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FFEA342BF25BF800784493 /* CocktailDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		20087FA72BF2171E005A8E2C /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		20087FAE2BF247ED005A8E2C /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		20087FB02BF24831005A8E2C /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		20B049C62BF7AA1B00D3C218 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		20B049C82BF7AA8B00D3C218 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		20FFEA322BF2593100784493 /* CocktailDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailModel.swift; sourceTree = "<group>"; };
 		20FFEA342BF25BF800784493 /* CocktailDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 		20087F622BF0FDA1005A8E2C /* BartenderApp */ = {
 			isa = PBXGroup;
 			children = (
+				20B049C52BF7A9FF00D3C218 /* Manager */,
 				20087FA22BF174D7005A8E2C /* Service */,
 				20087F9A2BF102C1005A8E2C /* Const */,
 				20087F992BF0FDFC005A8E2C /* Supportings */,
@@ -165,6 +170,7 @@
 				20087F9D2BF114C8005A8E2C /* Cell */,
 				20087F672BF0FDA1005A8E2C /* MainScreenViewController.swift */,
 				20FFEA342BF25BF800784493 /* CocktailDetailViewController.swift */,
+				20B049C82BF7AA8B00D3C218 /* FavouritesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				20087FAE2BF247ED005A8E2C /* BaseNetwork.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		20B049C52BF7A9FF00D3C218 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				20B049C62BF7AA1B00D3C218 /* CoreDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +365,7 @@
 				20087F682BF0FDA1005A8E2C /* MainScreenViewController.swift in Sources */,
 				20087F9C2BF102D6005A8E2C /* Colors.swift in Sources */,
 				20087FA12BF13C02005A8E2C /* CocktailModel.swift in Sources */,
+				20B049C92BF7AA8B00D3C218 /* FavouritesViewController.swift in Sources */,
 				20087F6E2BF0FDA1005A8E2C /* BartenderApp.xcdatamodeld in Sources */,
 				20087F642BF0FDA1005A8E2C /* AppDelegate.swift in Sources */,
 				20087FA82BF2171E005A8E2C /* MainScreenViewModel.swift in Sources */,
@@ -360,6 +375,7 @@
 				20087FA42BF17500005A8E2C /* Networking.swift in Sources */,
 				20087F662BF0FDA1005A8E2C /* SceneDelegate.swift in Sources */,
 				20087FAF2BF247ED005A8E2C /* BaseNetwork.swift in Sources */,
+				20B049C72BF7AA1B00D3C218 /* CoreDataManager.swift in Sources */,
 				20087FB12BF24831005A8E2C /* AppConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

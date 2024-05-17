@@ -17,7 +17,7 @@ class MainScreenViewController: UIViewController {
     var isFiltering: Bool = false
     
     let titleLabel = UILabel()
-    let addFavoritesButtonImage = UIImageView()
+    let favoritesButton = UIButton()
     let searchBar = UISearchBar()
     let coctailsCollectionView: UICollectionView = {
             let layout = UICollectionViewFlowLayout()
@@ -77,11 +77,18 @@ class MainScreenViewController: UIViewController {
     }
 
     func configureFavoritesButton() {
-        addFavoritesButtonImage.translatesAutoresizingMaskIntoConstraints = false
-        addFavoritesButtonImage.image = UIImage(systemName: "bookmark")
-        addFavoritesButtonImage.tintColor = .black
-
-        view.addSubview(addFavoritesButtonImage)
+        favoritesButton.translatesAutoresizingMaskIntoConstraints = false
+        favoritesButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        favoritesButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        favoritesButton.tintColor = .black
+        favoritesButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        view.addSubview(favoritesButton)
+    }
+    
+    @objc func saveButtonTapped() {
+        let favoritesVC = FavoritesViewController()
+            navigationController?.pushViewController(favoritesVC, animated: true)
     }
 
     func configureSearchBar() {
@@ -106,16 +113,16 @@ class MainScreenViewController: UIViewController {
             NSLayoutConstraint.activate([
                 titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                 titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                titleLabel.trailingAnchor.constraint(equalTo: addFavoritesButtonImage.leadingAnchor)
+                titleLabel.trailingAnchor.constraint(equalTo: favoritesButton.leadingAnchor)
                 
             ])
 
             // Favorites button constraints
             NSLayoutConstraint.activate([
-                addFavoritesButtonImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                addFavoritesButtonImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                addFavoritesButtonImage.bottomAnchor.constraint(equalTo: searchBar.topAnchor, constant: -16),
-                addFavoritesButtonImage.widthAnchor.constraint(equalToConstant: 32)
+                favoritesButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                favoritesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                favoritesButton.bottomAnchor.constraint(equalTo: searchBar.topAnchor, constant: -16),
+                favoritesButton.widthAnchor.constraint(equalToConstant: 32)
             ])
 
             // Search bar constraints
@@ -133,6 +140,15 @@ class MainScreenViewController: UIViewController {
                 coctailsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
                 coctailsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
+            
+            // FavoritesButton constraints
+        NSLayoutConstraint.activate([
+            favoritesButton.imageView!.heightAnchor.constraint(equalToConstant: 24),
+            favoritesButton.imageView!.widthAnchor.constraint(equalToConstant: 24)
+        ])
+        
+        
+        
         }
 
 }

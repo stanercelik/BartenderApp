@@ -125,4 +125,10 @@ class CocktailCollectionViewCell: UICollectionViewCell {
         titleLabel.text = model.title
     }
     
+    func setup(model: CocktailDetailModel) {
+        
+        cocktailImage = viewModel.downloadImage(url: model.image, cocktailImage: self.cocktailImage)
+        titleLabel.text = model.title
+    }
+    
 }

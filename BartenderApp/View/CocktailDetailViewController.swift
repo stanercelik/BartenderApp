@@ -10,7 +10,7 @@ import UIKit
 class CocktailDetailViewController: UIViewController {
     let cocktailDetailModel = CocktailDetailModel(
       id: "45",
-      title: "Mojito",
+      title: "Mojitodadlknaskdnalsdnşlasçdada dasds",
       difficulty: "Easy",
       portion: "Serves 6-8",
       time: "Hands-on time 5 min",
@@ -37,7 +37,7 @@ class CocktailDetailViewController: UIViewController {
     
     let scrollView = UIScrollView()
     let contentView = UIView()
-    let saveButtonImage = UIImageView()
+    let saveButton = UIButton()
     let titleLabel =  UILabel()
     let difficulty = UILabel()
     let portion = UILabel()
@@ -48,9 +48,7 @@ class CocktailDetailViewController: UIViewController {
     let ingredients = UILabel()
     let methodTitle = UILabel()
     var method = UILabel()
-    
     var image = UIImageView()
-    
     
     let topView = UIView()
     let imageBottomView = UIView()
@@ -59,7 +57,7 @@ class CocktailDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Cocktail Detail"
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.backBarButtonItem?.tintColor = .black
         
         view.backgroundColor = .appBackground
         
@@ -90,32 +88,48 @@ class CocktailDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.titleLabel.text = cocktailDetailModel.title
-        self.image = self.viewModel.downloadImage(url: cocktailDetailModel.image, cocktailImage: self.image)
-        self.difficulty.text = cocktailDetailModel.difficulty
-        self.cocktailDescription.text = cocktailDetailModel.description
-        self.portion.text = cocktailDetailModel.portion
-        self.time.text = cocktailDetailModel.time
-        self.ingredients.text = createBulletListLabel( cocktailDetailModel.ingredients)
-        self.method.text = createStepLabel(cocktailDetailModel.method)
+        guard let cocktailID = cocktailID else {
+                print("No cocktail ID provided")
+                return
+            }
         
-        /*networking.fetchCocktailDetail(id: cocktailID ?? "", completion: { [weak self] model in
-            self?.cocktail = model
+        networking.fetchCocktailDetail(id: cocktailID, completion: { [weak self] model in
+            guard let self = self else { return }
             
             DispatchQueue.main.async {
-                self?.titleLabel.text = model?.title
-                self?.image = self?.viewModel.downloadImage(url: model?.image ?? URL(string: "")!, cocktailImage: self!.image) ?? UIImageView(image: UIImage(named: "placeholder"))
-                self?.difficulty.text = model?.difficulty
-                self?.cocktailDescription.text = model?.description
-                self?.portion.text = model?.portion
-                self?.time.text = model?.time
-                
+                guard let model = model else {
+                    print("Failed to fetch cocktail details")
+                    return
+                }
+                self.cocktail = model
+
+                DispatchQueue.main.async {
+                    self.updateUI()
+                }
             }
-            
-            
-        })*/
+        })
+        updateSaveButtonState()
+    }
+    
+    func updateSaveButtonState() {
+        guard let cocktailID = cocktailID else { return }
+        let isFavorite = CoreDataManager.shared.isFavorite(cocktailID: cocktailID)
+        saveButton.isSelected = isFavorite
+        let buttonImageName = isFavorite ? "bookmark.fill" : "bookmark"
+        saveButton.setImage(UIImage(systemName: buttonImageName), for: .normal)
+    }
+    
+    func updateUI() {
+        guard let cocktail = self.cocktail else { return }
         
-        
+        self.titleLabel.text = cocktail.title
+        self.image = self.viewModel.downloadImage(url: cocktail.image, cocktailImage: self.image)
+        self.difficulty.text = cocktail.difficulty
+        self.cocktailDescription.text = cocktail.description
+        self.portion.text = cocktail.portion
+        self.time.text = cocktail.time
+        self.ingredients.text = self.createBulletListLabel(cocktail.ingredients)
+        self.method.text = self.createStepLabel(cocktail.method)
     }
     
     // MARK: Text Formatters
@@ -132,19 +146,19 @@ class CocktailDetailViewController: UIViewController {
     func createStepLabel(_ steps : [[String: String]]) -> String {
         var formattedMethodText = ""
         for (index, step) in steps.enumerated() {
-            let stepNumber = "Step \(index + 1):" // Add step number
-            let stepDescription = step.values.first! // Extract step description
-            formattedMethodText += "\(stepNumber) \(stepDescription)\n\n" // Add newline after each step
+            let stepNumber = "Step \(index + 1):"
+            let stepDescription = step.values.first!
+            formattedMethodText += "\(stepNumber) \(stepDescription)\n\n"
         }
         return formattedMethodText
     }
     
     
     //MARK: Configures
-    
     func configureScrollView(){
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .appBackground
+        print("cocktail Title: \(cocktail?.title)")
         view.addSubview(scrollView)
     }
     
@@ -163,7 +177,7 @@ class CocktailDetailViewController: UIViewController {
         gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.image.frame.size.width, height: self.image.frame.size.height)
+        gradientLayer.frame = image.bounds
         image.layer.insertSublayer(gradientLayer, at: 0)
     }
 
@@ -175,7 +189,7 @@ class CocktailDetailViewController: UIViewController {
     
     func configureTitle(){
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = cocktail?.title
+        //titleLabel.text = cocktail?.title
         titleLabel.numberOfLines = 1
         titleLabel.textColor = .white
         titleLabel.font = .systemFont(ofSize: 28, weight: .bold)
@@ -267,12 +281,32 @@ class CocktailDetailViewController: UIViewController {
     }
     
     func configureSaveButtonImage(){
-        saveButtonImage.translatesAutoresizingMaskIntoConstraints = false
-        saveButtonImage.image = UIImage(systemName: "bookmark")
-        saveButtonImage.tintColor = .white
-        saveButtonImage.contentMode = .scaleAspectFit
-        saveButtonImage.clipsToBounds = true
-        image.addSubview(saveButtonImage)
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        saveButton.tintColor = .white
+        topView.addSubview(saveButton)
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        
+        // Add shadow to buttonImageView
+         let buttonImageViewLayer = saveButton.imageView!.layer
+         buttonImageViewLayer.shadowColor = UIColor.black.cgColor
+         buttonImageViewLayer.shadowOffset = CGSize(width: 5, height: 5)
+         buttonImageViewLayer.shadowRadius = 5.0
+         buttonImageViewLayer.shadowOpacity = 0.5
+         saveButton.layer.addSublayer(buttonImageViewLayer)
+    }
+    
+    @objc func saveButtonTapped() {
+        guard let cocktail = self.cocktail else { return }
+        saveButton.isSelected.toggle()
+        if saveButton.isSelected {
+            saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            CoreDataManager.shared.saveFavoriteCocktail(cocktail)
+        } else {
+            saveButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            CoreDataManager.shared.removeFavoriteCocktail(cocktail.id)
+        }
     }
     
     
@@ -301,7 +335,7 @@ class CocktailDetailViewController: UIViewController {
             topView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             topView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             topView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            topView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
+            topView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
         ])
         
         // Image Constraints
@@ -314,16 +348,16 @@ class CocktailDetailViewController: UIViewController {
         
         // Title Constraints
         NSLayoutConstraint.activate([
-            titleLabel.trailingAnchor.constraint(equalTo: time.leadingAnchor, constant: -42),
             titleLabel.leadingAnchor.constraint(equalTo: imageBottomView.leadingAnchor, constant: 8),
             titleLabel.bottomAnchor.constraint(equalTo: difficulty.topAnchor, constant: -4),
+            titleLabel.widthAnchor.constraint(equalTo: imageBottomView.widthAnchor, multiplier: 0.5)
         ])
         
         // Difficulty Constraints
         NSLayoutConstraint.activate([
                difficulty.leadingAnchor.constraint(equalTo: imageBottomView.leadingAnchor, constant: 8),
-               difficulty.trailingAnchor.constraint(equalTo: portion.leadingAnchor, constant: -64),
                difficulty.bottomAnchor.constraint(equalTo: imageBottomView.bottomAnchor, constant: -8),
+               difficulty.widthAnchor.constraint(equalTo: imageBottomView.widthAnchor, multiplier: 0.4)
            ])
         
         // Time Constraints
@@ -341,7 +375,7 @@ class CocktailDetailViewController: UIViewController {
                portion.bottomAnchor.constraint(equalTo: imageBottomView.bottomAnchor, constant: -8)
            ])
         
-        // Configure DescriptionTitle
+        // DescriptionTitle Constraints
         NSLayoutConstraint.activate([
             descriptionTitle.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16),
             descriptionTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
@@ -357,10 +391,15 @@ class CocktailDetailViewController: UIViewController {
         
         // saveButton Constraints
         NSLayoutConstraint.activate([
-            saveButtonImage.topAnchor.constraint(equalTo: topView.topAnchor, constant: 64),
-            saveButtonImage.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -8),
-            saveButtonImage.heightAnchor.constraint(equalToConstant: 42),
-            saveButtonImage.widthAnchor.constraint(equalToConstant: 42)
+            saveButton.topAnchor.constraint(equalTo: topView.topAnchor, constant: 8),
+            saveButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -8),
+            
+        ])
+        
+        // saveButtonImageView Constraints
+        NSLayoutConstraint.activate([
+            saveButton.imageView!.heightAnchor.constraint(equalToConstant: 42),
+            saveButton.imageView!.widthAnchor.constraint(equalToConstant: 42)
         ])
         
         // ingredientsTitle Constraints
@@ -393,12 +432,15 @@ class CocktailDetailViewController: UIViewController {
         ])
     }
     
+    // ImageBottomView Constraints
     func imageBottomViewConstraints() {
         NSLayoutConstraint.activate([
             imageBottomView.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
             imageBottomView.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
             imageBottomView.bottomAnchor.constraint(equalTo: topView.bottomAnchor),
-            imageBottomView.heightAnchor.constraint(equalToConstant: topView.frame.height / 5),
+            
         ])
     }
+    
+    
 }
