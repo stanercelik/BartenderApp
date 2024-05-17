@@ -17,8 +17,8 @@ class FavoritesViewController: UIViewController {
             layout.minimumInteritemSpacing = 8
             let itemWidth = (UIScreen.main.bounds.width - 48) / 3
             layout.itemSize = CGSize(width: itemWidth, height: 150)
-            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout) // Initialize with the layout
-            collectionView.register(CocktailCollectionViewCell.self, forCellWithReuseIdentifier: "CocktailCollectionViewCell") // Register a cell class
+            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+            collectionView.register(CocktailCollectionViewCell.self, forCellWithReuseIdentifier: "CocktailCollectionViewCell")
             return collectionView
         }()
     
@@ -32,7 +32,18 @@ class FavoritesViewController: UIViewController {
         cocktailsCollectionView.delegate = self
         cocktailsCollectionView.dataSource = self
         
+        configureCollectionView()
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoriteCocktails = CoreDataManager.shared.getFavoriteCocktails()
+        cocktailsCollectionView.reloadData()
+    }
+    
+    
+    //MARK: Configure
+    func configureCollectionView(){
         view.addSubview(cocktailsCollectionView)
         cocktailsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -42,15 +53,9 @@ class FavoritesViewController: UIViewController {
             cocktailsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
         ])
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        favoriteCocktails = CoreDataManager.shared.getFavoriteCocktails()
-        cocktailsCollectionView.reloadData()
-    }
 }
 
-
+// MARK: CollectionView
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         favoriteCocktails.count

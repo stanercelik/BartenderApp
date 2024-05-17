@@ -16,7 +16,7 @@ import Foundation
 class Network<T: Decodable> {
     func get<R>(_ endpoint: String, parameters: [String: Any] = [:], headers: [String: String] = [:], method: String = "GET", completion: @escaping (R) -> Void) where R: Decodable {
         guard let url = URL(string: AppConst.apiBaseURL + endpoint) else {
-            completion(try! JSONDecoder().decode(R.self, from: Data())) // Burada, R tipi ne olursa olsun bir default değer dönüyoruz
+            completion(try! JSONDecoder().decode(R.self, from: Data()))
             return
         }
 
@@ -38,13 +38,13 @@ class Network<T: Decodable> {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 print("Error fetching data: \(error.localizedDescription)")
-                completion(try! JSONDecoder().decode(R.self, from: Data())) // Hata durumunda da default değeri dönüyoruz
+                completion(try! JSONDecoder().decode(R.self, from: Data()))
                 return
             }
 
             guard let data = data else {
                 print("No data returned from API")
-                completion(try! JSONDecoder().decode(R.self, from: Data())) // Hata durumunda da default değeri dönüyoruz
+                completion(try! JSONDecoder().decode(R.self, from: Data()))
                 return
             }
 
@@ -53,7 +53,7 @@ class Network<T: Decodable> {
                 completion(result)
             } catch {
                 print("Error parsing data: \(error.localizedDescription)")
-                completion(try! JSONDecoder().decode(R.self, from: Data())) // Hata durumunda da default değeri dönüyoruz
+                completion(try! JSONDecoder().decode(R.self, from: Data()))
             }
         }.resume()
     }

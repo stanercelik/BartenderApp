@@ -26,8 +26,8 @@ class MainScreenViewController: UIViewController {
             layout.minimumInteritemSpacing = 8
             let itemWidth = (UIScreen.main.bounds.width - 48) / 3
             layout.itemSize = CGSize(width: itemWidth, height: 150)
-            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout) // Initialize with the layout
-            collectionView.register(CocktailCollectionViewCell.self, forCellWithReuseIdentifier: "CocktailCollectionViewCell") // Register a cell class
+            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+            collectionView.register(CocktailCollectionViewCell.self, forCellWithReuseIdentifier: "CocktailCollectionViewCell")
             return collectionView
         }()
 
@@ -56,15 +56,12 @@ class MainScreenViewController: UIViewController {
         networking.fetchCocktails { [weak self] models in
             self?.cocktailList = models
             
-            // Result success failure
             DispatchQueue.main.async {
                 self?.coctailsCollectionView.reloadData()
             }
         }
     }
 
-    
-    
     // MARK: - Configures
 
     func configureLabel() {
@@ -146,14 +143,11 @@ class MainScreenViewController: UIViewController {
             favoritesButton.imageView!.heightAnchor.constraint(equalToConstant: 24),
             favoritesButton.imageView!.widthAnchor.constraint(equalToConstant: 24)
         ])
-        
-        
-        
-        }
-
+    }
 }
 
 
+// MARK: CollectionView
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isFiltering {
@@ -177,7 +171,12 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cocktail = cocktailList[indexPath.row]
+        let cocktail: CocktailModel
+        if isFiltering {
+            cocktail = filteredCocktailList[indexPath.item]
+        } else {
+            cocktail = cocktailList[indexPath.item]
+        }
         let detailVC = CocktailDetailViewController()
         detailVC.cocktailID = cocktail.id
         navigationController?.pushViewController(detailVC, animated: true)
@@ -185,6 +184,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 
+// MARK: SearchBar
 extension MainScreenViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

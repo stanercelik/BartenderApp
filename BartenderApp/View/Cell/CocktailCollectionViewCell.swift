@@ -107,7 +107,9 @@ class CocktailCollectionViewCell: UICollectionViewCell {
             titleLabel.bottomAnchor.constraint(equalTo: cocktailImage.bottomAnchor, constant: -8),
             titleLabel.heightAnchor.constraint(equalToConstant: 32),
         ])
-        
+    }
+    
+    func gradientConstraints(){
         // GradientView Constraints
         NSLayoutConstraint.activate([
             gradientView.leadingAnchor.constraint(equalTo: cocktailView.leadingAnchor),

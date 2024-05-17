@@ -17,5 +17,4 @@ struct CocktailDetailModel: Codable {
     let ingredients: [String]
     let method: [[String: String]]
     let image: URL
-    //var isFavorite: Bool = false
 }

@@ -158,7 +158,7 @@ class CocktailDetailViewController: UIViewController {
     func configureScrollView(){
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .appBackground
-        print("cocktail Title: \(cocktail?.title)")
+
         view.addSubview(scrollView)
     }
     
